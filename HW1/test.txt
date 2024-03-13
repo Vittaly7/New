@@ -1,0 +1,21 @@
+1)  git add <filename> or <.>                   : adding a file to git
+2)  git commit <filename> or -a <nothing> or -m : commiting it
+3)  git branch                                  : lookup for branches
+4)  git switch <branchname>                     : switch to another branch
+5)  git merge <branchname>                      : merge current branch with selected
+6)  git restore                                 : undo all actions to current commit
+7)  git reset <commithash>                      : delete the commit, NOT changes in files
+8)  git reset --hard <commithash>               : delete the commit, ANS changes in files
+8.1)git reset --hard HEAD~1                     : one commit back
+9)  git push
+10) git pull
+11) git checkout <filename>                     : reset file state (if was not commited)
+12) git revert HEAD~<number-of-commits-back>    : reverts number of commits
+
+
+How to undo changes in file (not commited):    git checkout <filename>
+How to undo commit (and save changes in file): git reset <commithash>
+How to undo commit (and undo changes in file): git reset --rard <commithash>
+How to undo push (and undo changes in file):
+        1) git revert HEAD~<number-of-commits-back> (undo push)
+        2) git checkout <commithash> <filename>
