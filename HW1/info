@@ -19,7 +19,38 @@
 // поиск по названию (grep)ls | grep media
 // мануал на команду       man имя проги/команды
 Рыбота с гитом
-// создать локальный гит реп git init
+// создать локальный гит реп git init(в той папке где хотим создать)
+// описание команды        git help команда(полное руководство) / git команда -h(как можно использовать команду)
+// статус локального       git status
+   гит репозитория
+// отслеживать файл        git add имя файла или . если все файлы в этой папке
+// перестать отслеживать   git rm --cached имя файла
+   файл
+// игнорировать файлы      .gitignore создать в папке с гитом. Открыть. # ignore all .txt files(коммент)
+                                                                        *.txt - игнорирует
+// 1)  git add <filename> or <.>                   : adding a file to git
+2)  git commit <filename> or -a <nothing> or -m : commiting it
+3)  git branch                                  : lookup for branches
+4)  git switch <branchname>                     : switch to another branch
+5)  git merge <branchname>                      : merge current branch with selected
+6)  git restore                                 : undo all actions to current commit
+    git log                                     : get commit hash
+7)  git reset <commithash>                      : delete the commit, NOT changes in files
+8)  git reset --hard <commithash>               : delete the commit, AND changes in files
+8.1)git reset --hard HEAD~1                     : one commit back
+9)  git push
+10) git pull
+11) git checkout <filename>                     : reset file state (if was not commited)
+12) git revert HEAD~<number-of-commits-back>    : reverts number of commits
+
+
+How to undo changes in file (not commited):    git checkout <filename>
+How to undo commit (and save changes in file): git reset <commithash>
+How to undo commit (and undo changes in file): git reset --rard <commithash>
+How to undo push (and undo changes in file):
+  1) git reset <commithash>                     : reseting local repository
+  2) git push origin <branchname> --force       : pushing this to github
+
 
 Работа с компилятором
 в папке homework создать публ гит реп.

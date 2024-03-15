@@ -11,7 +11,7 @@
 10) git pull
 11) git checkout <filename>                     : reset file state (if was not commited)
 12) git revert HEAD~<number-of-commits-back>    : reverts number of commits
-
+R
 
 How to undo changes in file (not commited):    git checkout <filename>
 How to undo commit (and save changes in file): git reset <commithash>
@@ -19,3 +19,4 @@ How to undo commit (and undo changes in file): git reset --rard <commithash>
 How to undo push (and undo changes in file):
         1) git revert HEAD~<number-of-commits-back> (undo push)
         2) git checkout <commithash> <filename>
+git push -f origin HEAD^:master
