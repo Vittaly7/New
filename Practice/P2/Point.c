@@ -20,7 +20,7 @@ return 0;
 
 P coordinates (int a, int b){
     P point;
-    if(a, b >= 0){
+    if(a >= 0 && b >= 0){
         point.x = a;
         point.y = b;
         return point;
