@@ -15,8 +15,8 @@ typedef struct{
 } Student;
 
 typedef struct{
-    int *arr;
-} Data;
+    int* arr;
+    } Data;
 
 void print_points(Point points[10]);
 void print_student(Student Kevin);
@@ -51,8 +51,10 @@ int main(){
 // allocate memory to an array in struct
     Data x;
     Data y;
-    x.arr = malloc(sizeof(int) * 10);
-    y.arr = malloc(sizeof(int) * 20);
+    x.arr = (int*)malloc(sizeof(int) * 10);
+    if(x.arr == NULL) return 1;
+    y.arr = (int*)malloc(sizeof(int) * 20);
+    if(y.arr == NULL) return 1;
     for(int i = 0; i < 10; ++i)
         x.arr[i] = i;
     for(int i = 0; i < 10; ++i)
