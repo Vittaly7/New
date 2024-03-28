@@ -7,6 +7,19 @@ typedef struct{
 } Point;
 
 int main (){
+// generating a struct variable
+    Point* array; // points to the 1st element of an array of structs
+//allocating memory for an array of structs
+    int length = 10;
+    array = (Point*)malloc(sizeof(Point) * length);
+    array[0].x = 1;
+    array[0].y = 8;
+    for(int i = 0; i < length; ++i){
+        array[i].x = i;
+        array[i].y = length - i;
+        printf("P(%d) = %d : %d\n", i, array[i].x, array[i].y);
+    }
+    /*
 //storing on stack
     Point p1 = {.x = 4, .y = 5};
     printf("%d, %d\n", p1.x, p1.y);
@@ -16,9 +29,9 @@ int main (){
 // почему срабатывает условие if, если убрать комментарии?
     //if(p2 == NULL); return 1;
     (*p2).x = 10;
-    (*p2).y = 2;
-    printf("%d, %d\n", (*p2).x, (*p2).y);
+    p2 -> y = 2 + 10;
+    printf("%d, %d\n", (*p2).x, p2 -> y);
     free (p2);
-
+    */
     return 0;
 }
