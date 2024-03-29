@@ -27,4 +27,5 @@ P coordinates (int a, int b){
         return (*point);
     }
     else printf("invalid coordinates :(\n");
+    free(point);
 }
