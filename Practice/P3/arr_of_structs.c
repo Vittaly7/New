@@ -6,7 +6,7 @@ typedef struct{
     int y;
 } Point;
 
-int main (){
+int main (){/*
 // generating a struct variable
     Point* array; // points to the 1st element of an array of structs
 //allocating memory for an array of structs
@@ -35,8 +35,8 @@ int main (){
         array[i].x = i;
         array[i].y = length - i;
         printf("P(%d) = %d : %d\n", i, array[i].x, array[i].y);
-    }
-    /*
+    }*/
+    
 //storing on stack
     Point p1 = {.x = 4, .y = 5};
     printf("%d, %d\n", p1.x, p1.y);
@@ -44,12 +44,12 @@ int main (){
     Point* p2;
     p2 = malloc(sizeof(Point));
 // почему срабатывает условие if, если убрать комментарии?
-    //if(p2 == NULL); return 1;
+    if(p2 == NULL) return 1;
     (*p2).x = 10;
     p2 -> y = 2 + 10;
     printf("%d, %d\n", (*p2).x, p2 -> y);
     free (p2);
-    */
-   free (array);
+    
+   //free (array);
     return 0;
 }
