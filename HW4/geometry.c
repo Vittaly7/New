@@ -1,15 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
-const int width = 30;
-const int hight = 80;
+
+#define width 30;
+#define hight 80;
+
 char field [width][hight];
-// 1. поле 30 : 60
+// 1. поле 30 : 80
 // 2. считать имя фигуры
 // 3. считать координаты вершин
 // 4. валидация
 // 5. отрисовка фигур
 
-void grid (int width, int hight);
+void grid (width, hight);
 void grid_output(char field[][]);
 
 
@@ -21,7 +23,7 @@ int main (){
     return 0;
 }
 // создаем матрицу и заполняем ее.
-void grid (int width, int hight){
+void grid (width, hight){
     char field [width][hight];
     for(int i = 0; i < width; ++i){
         for(int j = 0; j < hight; ++j){
