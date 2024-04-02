@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define width 30;
-#define hight 80;
+#define width 30
+#define hight 80
 
 char field [width][hight];
 //make a new type for a point
@@ -16,34 +16,37 @@ typedef struct{
 // 4. валидация
 // 5. отрисовка фигур
 void coordinates(point* triangle, point* square, point* rectangle);
-void grid (width, hight);
-void grid_output(char field[][]);
+void grid (int width, int hight);
+void grid_output(char field[width][hight]);
 
 
 int main (){
-
+    
     grid (width, hight);
     grid_output(field[width][hight]);
 // allocate memory for shapes
 // allocate memory for a triangle
     point* triangle;
-    triangle == (point*)mallock(sizeof(point) * 3);
+    triangle == (point*)malloc(sizeof(point) * 3);
     if(triangle == NULL) return 1;
 // allocate memory for a square
     point* square;
-    square == (point*)mallock(sizeof(point) * 4);
+    square == (point*)malloc(sizeof(point) * 4);
     if(square == NULL) return 1;
 // allocate memory for a rectangle
     point* rectangle;
-    rectangle == (point*)mallock(sizeof(point) * 3);
+    rectangle == (point*)malloc(sizeof(point) * 3);
     if(rectangle == NULL) return 1;
 
 
-
+    free(triangle);
+    free(square);
+    free(rectangle);
+    
     return 0;
 }
 // создаем матрицу и заполняем ее.
-void grid (width, hight){
+void grid (int width, int hight){
     char field [width][hight];
     for(int i = 0; i < width; ++i){
         for(int j = 0; j < hight; ++j){
