@@ -23,31 +23,30 @@ void grid_output(char field[width][hight]);
 int main (){
     
     grid (width, hight);
-    grid_output(field[width][hight]);
+    grid_output(field);
 // allocate memory for shapes
 // allocate memory for a triangle
     point* triangle;
-    triangle == (point*)malloc(sizeof(point) * 3);
+    triangle = (point*)malloc(sizeof(point) * 3);
     if(triangle == NULL) return 1;
 // allocate memory for a square
     point* square;
-    square == (point*)malloc(sizeof(point) * 4);
+    square = (point*)malloc(sizeof(point) * 4);
     if(square == NULL) return 1;
 // allocate memory for a rectangle
     point* rectangle;
-    rectangle == (point*)malloc(sizeof(point) * 3);
+    rectangle = (point*)malloc(sizeof(point) * 3);
     if(rectangle == NULL) return 1;
 
 
     free(triangle);
     free(square);
     free(rectangle);
-    
+
     return 0;
 }
 // создаем матрицу и заполняем ее.
-void grid (int width, int hight){
-    char field [width][hight];
+void grid (int width, int hight){    
     for(int i = 0; i < width; ++i){
         for(int j = 0; j < hight; ++j){
             if(i == 0 || j == 0 || i == width - 1 || j == hight - 1)
