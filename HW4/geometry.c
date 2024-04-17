@@ -21,6 +21,7 @@ int check (point*);
 // 5. расставить точки
 void apex_output(point* array_of_apexes);
 // 6. отрисовка фигур
+void draw_shape(point* array);
 void grid_output(char field[hight][width]);
 
 
@@ -32,6 +33,7 @@ int main (){
     int is_valid = check(array_of_apexes);
     printf("%d\n", is_valid);
     apex_output(array_of_apexes);
+    draw_shape(array_of_apexes);
     grid_output(field);
 // печатаем координаты
 
@@ -121,4 +123,24 @@ void apex_output(point* array_of_apexes){
     for(int i = 0; i < number_of_apexes; ++i){
         field[array_of_apexes[i].x][array_of_apexes[i].y] = '#';
     }
+}
+//заполнение фигуры
+void draw_shape(point* array){
+    int up = array[0].y;
+    int down = array[0].y;
+    int left = array[0].x;
+    int right = array[0].x;
+    for(int i = 0; i < number_of_apexes; ++i){
+        if(up < array[i].y)
+            up = array[i].y;
+        else if(down > array[i].y)
+            down = array[i].y;
+        else if(left > array[i].x)
+            left = array[i].x;
+        else if(right < array[i].x)
+            right = array[i].x;
+    }
+    for(int i = up; i < down; ++i)
+        for(int j = left; j < right; ++j)
+            field[i][j] = '#';
 }
