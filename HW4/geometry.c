@@ -22,6 +22,8 @@ int check (point*);
 void apex_output(point* array_of_apexes);
 // 6. отрисовка фигур
 void draw_shape(point* array);
+// 7. щтрисовка треугольника
+void draw_triangle(point*a);
 void grid_output(char field[hight][width]);
 
 
@@ -121,11 +123,11 @@ int check (point*a){
 }
 void apex_output(point* array_of_apexes){
     for(int i = 0; i < number_of_apexes; ++i){
-        field[array_of_apexes[i].x][array_of_apexes[i].y] = '#';
+        field[array_of_apexes[i].y][array_of_apexes[i].x] = '#';
     }
 }
 //заполнение фигуры
-void draw_shape(point* array){
+void draw_shape(point* array){    
     int up = array[0].y;
     int down = array[0].y;
     int left = array[0].x;
@@ -140,7 +142,13 @@ void draw_shape(point* array){
         else if(right < array[i].x)
             right = array[i].x;
     }
-    for(int i = up; i < down; ++i)
-        for(int j = left; j < right; ++j)
+    for(int i = down; i <= up; ++i)
+        for(int j = left; j <= right; ++j)
             field[i][j] = '#';
+}
+void draw_triangle(point*a){
+     if((width - a[0].x) / (a[1].x - a[0].x) == (hight - a[0].y) / (a[1].y - a[0].y)){
+        for(int i = 0; i < )
+     }
+        
 }
