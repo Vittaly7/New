@@ -164,10 +164,18 @@ int main()
 #include <stdio.h>
 
 int main() {
-    const double inch = 2.54;
-    int hight = 0;
-    printf("enter your hight in inches: ");
-    scanf("%d", &hight);
-    printf("Your hight in santimeters is: %.3f\n", (double)hight * inch);
+    const double cups_in_pint = 2.0;
+    const double ounses_in_cup = 8.0;
+    const double tablespoons_in_ouns = 2.0;
+    const double teaspoons_in_a_tablespoon = 3.0;
+    double cup = 0.0;
+    printf("How many cups? ");
+    scanf("%lf", &cup);
+    double pint = cup / cups_in_pint;
+    double ouns = cup * ounses_in_cup;
+    double table_spoons = ouns * tablespoons_in_ouns;
+    double tea_spoons = table_spoons * teaspoons_in_a_tablespoon;
+
+    printf("This is\n%.2f pints\n%.2f ounses\n%.2f tablespoons\n%.2f teaspoons\n", pint, ouns, table_spoons, tea_spoons);
   return 0;
 }
