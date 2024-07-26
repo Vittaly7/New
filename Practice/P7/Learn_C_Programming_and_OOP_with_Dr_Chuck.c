@@ -161,7 +161,7 @@ int main()
   printf("long double = %zd\n", sizeof(long double));
   return 0;
 }*/
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main() {
     const double cups_in_pint = 2.0;
@@ -178,4 +178,57 @@ int main() {
 
     printf("This is\n%.2f pints\n%.2f ounses\n%.2f tablespoons\n%.2f teaspoons\n", pint, ouns, table_spoons, tea_spoons);
   return 0;
+}*/
+/*#include <stdio.h>
+
+int main() {
+    int k = 0;
+    while(1){
+    scanf("%d", &k);
+    if(k < 100 || k > 999) printf("Wrong number! Try again!\n");
+    else break;
+        }
+    int result = k / 10;
+    printf("%d", result);
+    return 0;
+}*/
+/*#include <stdio.h>
+int main()
+{
+    typedef struct room{
+      float hight;
+      float width;
+      float length;
+    }Room;
+    Room my_room[3];
+
+    printf("Input dimentions of the room:");
+    scanf("%f %f %f", &my_room[0].hight, &my_room[0].width, &my_room[0].length);
+    for(int i = 0; i < 3; ++i)
+      printf("hight: %.2f\nwidth: %.2f\nlength: %.2f\n", my_room[i].hight, my_room[i].length, my_room[i].width);
+    return 0;
+}*/
+/*#include <stdio.h>
+
+int main() {
+    int k = 0;
+    scanf("%d", &k);
+    if(k < 100 || k > 999) return 1;
+    int first = k % 100;
+    int last = k / 100;
+    printf("%d", first * 10 + last);
+    return 0;
+}*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define number 5
+
+int main(){
+
+    char Name [20];
+    scanf("%[^\n]s", Name);
+    printf("%s\n", Name);
+    return 0;
 }

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 int number_of_apexes = 0;
 #define hight 30
@@ -22,7 +23,7 @@ int check (point*);
 void apex_output(point* array_of_apexes);
 // 6. отрисовка фигур
 void draw_shape(point* array);
-// 7. щтрисовка треугольника
+// 7. отрисовка треугольника
 void draw_triangle(point*a);
 void grid_output(char field[hight][width]);
 
@@ -147,8 +148,24 @@ void draw_shape(point* array){
             field[i][j] = '#';
 }
 void draw_triangle(point*a){
-     if((width - a[0].x) / (a[1].x - a[0].x) == (hight - a[0].y) / (a[1].y - a[0].y)){
-        for(int i = 0; i < )
-     }
-        
+// определение вертикальной стороны и горизонтальной и отрисовать их
+    for(int i = 0; i < number_of_apexes - 1; ++i){
+        if(a[i].x == a[i + 1].x)
+            for(int j = 0; j < abs(a[i].y - a[i + 1].y); ++j)
+                field[a[i].x][a[i].y] = '#';
+    }
 }
+
+/*
+*
+# #
+#   #
+#     #
+* # # # *
+
+#
+#   #
+#         #
+#               #
+# # # # # # # # # # #
+*/

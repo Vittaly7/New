@@ -5,8 +5,8 @@ void print(int*, int);
 void shift (int* arr, int length, int number);
 void one_element_shift (int* arr, int length);
 int main (){
-    int a = 0;
-    scanf("%d", &a); // ввод пользователя
+    int a = 9;
+    //scanf("%d", &a); // ввод пользователя
     int* arr = (int*)calloc(a, sizeof(int)); // выделили память, заполнили 0
     if(arr == NULL) return 1;
     print(arr, a);
@@ -25,6 +25,7 @@ int main (){
 return 0;
 }
 void print(int* arr, int a){
+    int length = a;
     for(int i = 0; i < a; ++i)
         printf("%d ", arr[i]);
     printf("\n");
